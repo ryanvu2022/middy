@@ -20,11 +20,11 @@ const SingleProduct = ({ item }) => {
   }
 
   return (    
-    <div className="shadow-2xl w-2/5 m-2.5 p-4 rounded-md bg-white">
+    <div className="shadow-2xl sm:w-64 ss:w-72 w-88 m-2.5 p-4 rounded-md bg-white cursor-pointer hover:opacity-90">
       <img src={item.image} alt={item.name}/>
       <div>
         <h4>{item.name}</h4>
-        <h5>{item.price}</h5>
+        <h5>${item.price}</h5>
         {
           item.fastDelivery
             ? <div>Fast Delivery</div>

@@ -7,10 +7,10 @@ const Navbar = () => {
    const { state: { cart }, dispatch } = CartState();
 
    return (
-      <nav className="bg-darkblue px-8 py-5 text-white">
-         <div className="w-full flex flex-row justify-between items-center m-0">
+      <nav className="bg-darkblue w-full px-8 py-5 text-white">
+         <div className="w-full flex justify-between items-center m-0">
             <h2 className="mb-0 tracking-wider text-3xl cursor-pointer">
-               <Link to="/">Shopping Cart</Link>
+               <Link to="/">Middy</Link>
             </h2>
             <div className="block relative cursor-pointer">
                <Link to="/cart">

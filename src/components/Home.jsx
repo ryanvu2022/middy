@@ -6,9 +6,11 @@ const Home = () => {
    const { state: { products } } = CartState();
 
    return (
-      <div className="flex flex-wrap bg-[#F9F9F9]">
-         <Filter />
-         <div className="flex w-9/12 flex-wrap justify-evenly">
+      <div className="flex flex-col sm:flex-row bg-[#F9F9F9]">
+         <div className="flex sm:w-56 w-full">
+            <Filter />               
+         </div>           
+         <div className="flex flex-wrap justify-around">
             {products.map(item => (
                <SingleProduct 
                   key={item.id}

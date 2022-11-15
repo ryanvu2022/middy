@@ -6,48 +6,53 @@ const Filter = () => {
    const [rating, setRating] = useState(3);
 
    return (
-      <div className="flex flex-col w-1/5 bg-darkblue mt-10 p-5 text-white h-[85vh]">
-         <span className="pb-3 text-2xl">Filter Products</span>
+      <div className="flex flex-col md:w-96 w-full bg-darkblue mt-3 p-4 text-white h-52 sm:h-72">
+         <span className="pb-3 text-2xl sm:text-xl sm:text-left text-center">Filter Products</span>
+         <div className="flex flex-row sm:flex-col justify-evenly">
+            <div className="flex flex-col">
+               <span className="text-lg sm:text-base sm:mb-2">
+                  <Form.Check 
+                     inline
+                     label=" Ascending"
+                     name="group1"
+                     type="radio"
+                     id={`inline-1`}
+                  />
+               </span>
 
-         <span className="pb-3 text-lg">
-            <Form.Check 
-               inline
-               label=" Ascending"
-               name="group1"
-               type="radio"
-               id={`inline-1`}
-            />
-         </span>
+               <span className="text-lg sm:text-base sm:mb-2">
+                  <Form.Check 
+                     inline
+                     label=" Descending"
+                     name="group1"
+                     type="radio"
+                     id={`inline-2`}
+                  />
+               </span>
+            </div>
 
-         <span className="pb-3 text-lg">
-            <Form.Check 
-               inline
-               label=" Descending"
-               name="group1"
-               type="radio"
-               id={`inline-2`}
-            />
-         </span>
+            <div className="flex flex-col">
+               <span className="text-lg sm:text-base sm:mb-2">
+                  <Form.Check 
+                     inline
+                     label=" Fast Delivery"
+                     name="group1"
+                     type="checkbox"
+                     id={`inline-3`}
+                  />
+               </span>
 
-         <span className="pb-3 text-lg">
-            <Form.Check 
-               inline
-               label=" Fast Delivery"
-               name="group1"
-               type="checkbox"
-               id={`inline-3`}
-            />
-         </span>
-
-         <span className="pb-3 flex flex-row">
-            <label className="pr-2.5 text-lg">Rating: </label>
-            <Rating 
-               rating={rating} 
-               onClick={(index) => setRating(index + 1)}            
-            />
-         </span>
-
-         <Button className="bg-white text-darkblue tracking-wide rounded p-2 font-medium text-lg">Clear Filter</Button>    
+               <span className="flex flex-row">
+                  <label className="pr-2.5 text-lg sm:text-base">Rating: </label>
+                  <Rating 
+                     rating={rating} 
+                     onClick={(index) => setRating(index + 1)}            
+                  />
+               </span>
+            </div>
+         </div>
+  
+         <Button className="bg-white text-darkblue tracking-wide rounded p-2 font-medium text-lg sm-text-base w-1/2 sm:w-full mx-auto mt-5">Clear Filter</Button>    
             
       </div>
    )

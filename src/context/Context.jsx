@@ -9,7 +9,7 @@ const Context = ({ children }) => {
    const products = images.map((image, index) => ({
       id: index,
       name: faker.commerce.productName(),
-      price: faker.commerce.price(35, 85),
+      price: faker.commerce.price(35, 65),
       image: image,
       inStock: faker.datatype.boolean(),
       fastDelivery: faker.datatype.boolean(),
