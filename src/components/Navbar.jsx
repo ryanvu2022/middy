@@ -18,7 +18,7 @@ const Navbar = () => {
       <nav className="bg-darkblue w-full px-8 py-5 text-white">
          <div className="w-full flex justify-between items-center m-0">
             <h2 className="mb-0 tracking-widest text-3xl cursor-pointer">
-               <Link to="/">Middy</Link>
+               <Link to="/" onClick={() => setIsDropdownOpen(false)}>Middy</Link>
             </h2>
 
             <Dropdown>
@@ -30,7 +30,7 @@ const Navbar = () => {
                      </div>              
                   </div>         
                </Dropdown.Toggle>
-               <Dropdown.Menu className="flex flex-col bg-gray-50 rounded border-solid border-yellow-400 border-2">
+               <Dropdown.Menu className="z-10 flex flex-col bg-[#F9F9F9] rounded border-solid shadow-2xl border-2 border-gray-300">
                   {isDropdownOpen && <DropdownCart setIsDropdownOpen={setIsDropdownOpen}/>}
                </Dropdown.Menu>
             </Dropdown>

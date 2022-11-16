@@ -11,7 +11,7 @@ const DropdownCart = ({ setIsDropdownOpen}) => {
          {cart.length > 0
             ?  <>
                   {cart.map(item => (
-                     <span className="flex justify-between items-center mx-4 mt-4 p-4 bg-lightyellow text-black rounded" key={item.id}>
+                     <span className="flex justify-between items-center mx-4 mt-4 p-4 shadow-2xl border border-darkblue text-black rounded" key={item.id}>
                         <img src={item.image} alt={item.name}
                            className="rounded w-12 h-12 object-cover"
                         />
@@ -20,7 +20,7 @@ const DropdownCart = ({ setIsDropdownOpen}) => {
                            <span>${item.price}</span>
 
                         </div>
-                        <AiFillDelete className="cursor-pointer text-3xl" onClick={() => {
+                        <AiFillDelete className="cursor-pointer text-2xl" onClick={() => {
                            dispatch({
                               type: "REMOVE_FROM_CART",
                               payload: item

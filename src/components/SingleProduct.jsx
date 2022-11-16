@@ -23,12 +23,12 @@ const SingleProduct = ({ item }) => {
     <div className="shadow-2xl sm:w-64 ss:w-72 w-88 m-2.5 p-4 rounded-md bg-white cursor-pointer">
       <img src={image} alt={name}/>
       <div>
-        <h4>{name}</h4>
-        <h5>${price}</h5>
+        <h1 className="font-medium sm:text-lg text-xl mt-1">{name}</h1>
+        <h5 className="tracking-wide font-medium text-lg">${price}</h5>
         {
           item.fastDelivery
-            ? <div>Fast Delivery</div>
-            : <div>5 Days Delivery</div>
+            ? <div className="text-lg sm:text-base">Fast Delivery</div>
+            : <div className="text-lg sm:text-base">5 Days Delivery</div>
         }
         <div className="flex flex-row">
           <Rating rating={ratings}/>
@@ -36,17 +36,17 @@ const SingleProduct = ({ item }) => {
       </div>
       <div>
         {cart.some(p => p.id === id) && (
-          <button className="transition-all duration-300 ease-linear bg-red-600 hover:bg-red-400 text-white py-2 px-4 mr-2 my-2 rounded-md" onClick={removeFromCart}>
+          <button className="transition-all duration-300 ease-linear text-lg sm:text-base bg-red-600 hover:bg-red-400 text-white py-2 px-4 mr-2 my-2 rounded-md" onClick={removeFromCart}>
             Remove from Cart
           </button>
         )}
         {!cart.some(p => p.id === id) && inStock && (
-          <button className="transition-all duration-300 ease-linear bg-blue-600 hover:bg-blue-400 text-white py-2 px-4 mr-2 my-2 rounded-md" onClick={addToCart}>
+          <button className="transition-all duration-300 ease-linear text-lg sm:text-base bg-blue-600 hover:bg-blue-400 text-white py-2 px-4 mr-2 my-2 rounded-md" onClick={addToCart}>
             Add to Cart
           </button>
         )}
         {!inStock && (
-          <button className="transition-all duration-300 ease-linear bg-gray-600 hover:bg-gray-400 text-white py-2 px-4 mr-2 my-2 rounded-md" disabled>
+          <button className="transition-all duration-300 ease-linear text-lg sm:text-base bg-gray-600 hover:bg-gray-400 text-white py-2 px-4 mr-2 my-2 rounded-md" disabled>
             Out of Stock
           </button>
         )}

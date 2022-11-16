@@ -32,7 +32,7 @@ const Home = () => {
    }
 
    return (
-      <div className="flex flex-col sm:flex-row bg-verylightyellow">
+      <div className="flex flex-col sm:flex-row bg-white">
          <div className="flex sm:w-56 w-full">
             <Filter />               
          </div>           

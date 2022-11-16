@@ -6,7 +6,7 @@ const Filter = () => {
    const { productState: { sort, byFastDelivery, byStock, byRating  }, productDispatch } = CartState();
 
    return (
-      <div className="flex flex-col md:w-96 w-full bg-darkblue mt-3 p-4 text-white h-56 sm:h-72 sm:ml-3 mx-4 sm:mx-0">
+      <div className="flex flex-col sm:w-96 w-full bg-darkblue mt-3 p-4 text-white h-56 sm:h-full">
          <span className="pb-3 text-2xl sm:text-xl sm:text-left text-center">Filter Products</span>
          <div className="flex flex-row sm:flex-col justify-evenly">
             <div className="flex flex-col">
@@ -83,7 +83,7 @@ const Filter = () => {
             />
          </span>
 
-         <Button className="bg-white text-darkblue tracking-wide rounded p-2 font-medium text-lg sm-text-base w-1/2 sm:w-full mx-auto mt-2" onClick={() => productDispatch({ type: "CLEAR_FILTERS"})}>Clear Filter</Button>    
+         <Button className="transition-all duration-300 ease-linear hover:bg-red-500 hover:text-white bg-white text-darkblue tracking-wide rounded p-2 font-medium text-lg sm-text-base w-1/2 sm:w-full mx-auto mt-2" onClick={() => productDispatch({ type: "CLEAR_FILTERS"})}>Clear Filter</Button>    
             
       </div>
    )
