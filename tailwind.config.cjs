@@ -4,8 +4,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "darkblue" : "#083AA9",
-        "lightblue" : "#47B5FF",
+        darkblue: "#083AA9",
+        lightblue: "#8fc5e9",
+        lightyellow: "#FFF9D0",
+        verylightyellow: "#fffbed",
+      },
+      gridTemplateColumns: {
+        "cartgrid": "auto 1fr auto"
       }
     },
     screens: {

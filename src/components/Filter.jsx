@@ -6,7 +6,7 @@ const Filter = () => {
    const [rating, setRating] = useState(3);
 
    return (
-      <div className="flex flex-col md:w-96 w-full bg-darkblue mt-3 p-4 text-white h-52 sm:h-72">
+      <div className="flex flex-col md:w-96 w-full bg-darkblue mt-3 p-4 text-white h-52 sm:h-72 sm:ml-3 mx-4 sm:mx-0">
          <span className="pb-3 text-2xl sm:text-xl sm:text-left text-center">Filter Products</span>
          <div className="flex flex-row sm:flex-col justify-evenly">
             <div className="flex flex-col">

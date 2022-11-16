@@ -20,7 +20,7 @@ const SingleProduct = ({ item }) => {
   }
 
   return (    
-    <div className="shadow-2xl sm:w-64 ss:w-72 w-88 m-2.5 p-4 rounded-md bg-white cursor-pointer hover:opacity-90">
+    <div className="shadow-2xl sm:w-64 ss:w-72 w-88 m-2.5 p-4 rounded-md bg-white cursor-pointer">
       <img src={item.image} alt={item.name}/>
       <div>
         <h4>{item.name}</h4>
@@ -36,17 +36,17 @@ const SingleProduct = ({ item }) => {
       </div>
       <div>
         {cart.some(p => p.id === item.id) && (
-          <button className="bg-red-600 hover:bg-red-500 text-white py-2 px-4 mr-2 my-2 rounded-md" onClick={removeFromCart}>
+          <button className="transition-all duration-300 ease-linear bg-red-500 hover:bg-red-700 text-white py-2 px-4 mr-2 my-2 rounded-md" onClick={removeFromCart}>
             Remove from Cart
           </button>
         )}
         {!cart.some(p => p.id === item.id) && item.inStock && (
-          <button className="bg-blue-600 hover:bg-blue-500 text-white py-2 px-4 mr-2 my-2 rounded-md" onClick={addToCart}>
+          <button className="transition-all duration-300 ease-linear bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 mr-2 my-2 rounded-md" onClick={addToCart}>
             Add to Cart
           </button>
         )}
         {!item.inStock && (
-          <button className="bg-gray-700 hover:bg-gray-500 text-white py-2 px-4 mr-2 my-2 rounded-md" disabled>
+          <button className="transition-all duration-300 ease-linear bg-gray-700 hover:bg-gray-500 text-white py-2 px-4 mr-2 my-2 rounded-md" disabled>
             Out of Stock
           </button>
         )}

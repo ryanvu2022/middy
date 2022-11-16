@@ -6,7 +6,7 @@ const Home = () => {
    const { state: { products } } = CartState();
 
    return (
-      <div className="flex flex-col sm:flex-row bg-[#F9F9F9]">
+      <div className="flex flex-col sm:flex-row bg-verylightyellow">
          <div className="flex sm:w-56 w-full">
             <Filter />               
          </div>           
