@@ -36,17 +36,17 @@ const SingleProduct = ({ item }) => {
       </div>
       <div>
         {cart.some(p => p.id === id) && (
-          <button className="transition-all duration-300 ease-linear bg-red-500 hover:bg-red-700 text-white py-2 px-4 mr-2 my-2 rounded-md" onClick={removeFromCart}>
+          <button className="transition-all duration-300 ease-linear bg-red-600 hover:bg-red-400 text-white py-2 px-4 mr-2 my-2 rounded-md" onClick={removeFromCart}>
             Remove from Cart
           </button>
         )}
         {!cart.some(p => p.id === id) && inStock && (
-          <button className="transition-all duration-300 ease-linear bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 mr-2 my-2 rounded-md" onClick={addToCart}>
+          <button className="transition-all duration-300 ease-linear bg-blue-600 hover:bg-blue-400 text-white py-2 px-4 mr-2 my-2 rounded-md" onClick={addToCart}>
             Add to Cart
           </button>
         )}
         {!inStock && (
-          <button className="transition-all duration-300 ease-linear bg-gray-700 hover:bg-gray-500 text-white py-2 px-4 mr-2 my-2 rounded-md" disabled>
+          <button className="transition-all duration-300 ease-linear bg-gray-600 hover:bg-gray-400 text-white py-2 px-4 mr-2 my-2 rounded-md" disabled>
             Out of Stock
           </button>
         )}

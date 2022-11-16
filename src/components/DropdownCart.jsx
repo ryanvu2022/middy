@@ -11,9 +11,9 @@ const DropdownCart = ({ setIsDropdownOpen}) => {
          {cart.length > 0
             ?  <>
                   {cart.map(item => (
-                     <span className="flex justify-between items-center mx-4 mt-4 p-4 bg-verylightyellow text-black rounded" key={item.id}>
+                     <span className="flex justify-between items-center mx-4 mt-4 p-4 bg-lightyellow text-black rounded" key={item.id}>
                         <img src={item.image} alt={item.name}
-                           className="rounded w-14 h-14 object-cover"
+                           className="rounded w-12 h-12 object-cover"
                         />
                         <div className="flex flex-col flex-1 px-5 py-0">
                            <span>{item.name}</span>
