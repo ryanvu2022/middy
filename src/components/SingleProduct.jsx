@@ -24,7 +24,7 @@ const SingleProduct = ({ item }) => {
     <div className="shadow-2xl sm:w-64 ss:w-72 w-88 m-2.5 p-4 rounded-md bg-white cursor-pointer">
       <img src={image} alt={name}/>
       <div>
-        <h1 className="font-medium sm:text-lg text-xl mt-1">{name}</h1>
+        <h1 className="font-medium sm:text-base text-lg mt-1">{name}</h1>
         <h5 className="tracking-wide font-medium text-lg">${price}</h5>
         {
           item.fastDelivery
