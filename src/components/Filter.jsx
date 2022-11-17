@@ -1,6 +1,7 @@
 import { Form, Button } from "react-bootstrap";
 import { CartState } from '../context/Context';
 import Rating from './Rating';
+import { SORT_BY_PRICE, FILTER_BY_STOCK, FILTER_BY_DELIVERY, FILTER_BY_RATING } from "../constants/actionTypes";
 
 const Filter = () => {
    const { productState: { sort, byFastDelivery, byStock, byRating  }, productDispatch } = CartState();
@@ -18,7 +19,7 @@ const Filter = () => {
                      type="radio"
                      id={`inline-1`}
                      onChange={() => productDispatch({
-                        type: "SORT_BY_PRICE",
+                        type: SORT_BY_PRICE,
                         payload: "lowToHigh"
                      })}
                      checked={sort === "lowToHigh" ? true : false}
@@ -33,7 +34,7 @@ const Filter = () => {
                      type="radio"
                      id={`inline-2`}
                      onChange={() => productDispatch({
-                        type: "SORT_BY_PRICE",
+                        type: SORT_BY_PRICE,
                         payload: "highToLow"
                      })}
                      checked={sort === "highToLow" ? true : false}
@@ -50,7 +51,7 @@ const Filter = () => {
                      type="checkbox"
                      id={`inline-3`}
                      onChange={() => productDispatch({
-                        type: "FILTER_BY_DELIVERY"
+                        type: FILTER_BY_DELIVERY
                      })}
                      checked={byFastDelivery}
                   />
@@ -64,7 +65,7 @@ const Filter = () => {
                      type="checkbox"
                      id={`inline-4`}
                      onChange={() => productDispatch({
-                        type: "FILTER-BY-STOCK",
+                        type: FILTER_BY_STOCK,
                      })}
                      checked={byStock}
                   />
@@ -77,7 +78,7 @@ const Filter = () => {
             <Rating 
                rating={byRating} 
                onClick={(index) => productDispatch({
-                  type: "FILTER_BY_RATING",
+                  type: FILTER_BY_RATING,
                   payload: index + 1,
                })}            
             />

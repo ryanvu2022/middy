@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { CartState } from "../context/Context";
 import { AiFillDelete } from "react-icons/ai";
+import { REMOVE_FROM_CART } from '../constants/actionTypes';
 
 const DropdownCart = ({ setIsDropdownOpen}) => {
    const { state: { cart }, dispatch } = CartState();
@@ -22,7 +23,7 @@ const DropdownCart = ({ setIsDropdownOpen}) => {
                         </div>
                         <AiFillDelete className="cursor-pointer text-2xl" onClick={() => {
                            dispatch({
-                              type: "REMOVE_FROM_CART",
+                              type: REMOVE_FROM_CART,
                               payload: item
                            })
                         }}/>

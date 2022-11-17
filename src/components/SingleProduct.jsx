@@ -1,5 +1,6 @@
 import { CartState } from "../context/Context";
 import Rating from "./Rating";
+import { ADD_TO_CART, REMOVE_FROM_CART } from "../constants/actionTypes";
 
 const SingleProduct = ({ item }) => {
   const { id, name, price, image, inStock, ratings } = item;
@@ -7,14 +8,14 @@ const SingleProduct = ({ item }) => {
 
   const addToCart = () => {
     dispatch({
-      type: "ADD_TO_CART",
+      type: ADD_TO_CART,
       payload: item
     })
   }
 
   const removeFromCart = () => {
     dispatch({
-      type: "REMOVE_FROM_CART",
+      type: REMOVE_FROM_CART,
       payload: item
     })
   }
