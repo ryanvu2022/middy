@@ -10,6 +10,8 @@ Key features:
 - Reset the cart
 
 
+https://user-images.githubusercontent.com/105618431/202814223-3bb2e1bf-e398-41a9-bf8e-3de6f2cd34d2.mp4
 
-https://user-images.githubusercontent.com/105618431/202793881-3cca40c2-70ab-4b02-a009-b7790cf4841b.mp4
+
+
 
