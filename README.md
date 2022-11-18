@@ -8,3 +8,8 @@ Key features:
 - Add item to cart / Remove item from cart.
 - Update quantity and total
 - Reset the cart
+
+
+
+https://user-images.githubusercontent.com/105618431/202793881-3cca40c2-70ab-4b02-a009-b7790cf4841b.mp4
+
