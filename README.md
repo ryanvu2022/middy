@@ -1,6 +1,6 @@
 # middy
-A React e-commerce T-shirt shopping cart built using **Context API** for state management.  
-Tech Stack: ***React, Tailwind CSS, Vite, React Router***
+A React e-commerce shopping cart built using **Context API** and **React Hooks** for state management.  
+Tech Stack: ***React, Tailwind CSS, Vite, React Router, Context API, React Hooks***
 
 Key features:  
 - Browse items
