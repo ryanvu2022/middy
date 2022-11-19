@@ -1,6 +1,7 @@
 import { CartState } from "../context/Context";
 import SingleProduct from "./SingleProduct";
 import Filter from "./Filter";
+import { AiOutlineCopyrightCircle } from "react-icons/ai";
 
 const Home = () => {
    const { 
@@ -35,15 +36,28 @@ const Home = () => {
       <div className="flex flex-col sm:flex-row bg-white">
          <div className="flex sm:w-56 w-full">
             <Filter />               
-         </div>           
-         <div className="flex flex-wrap justify-around">
-            {filterProducts().map(item => (
-               <SingleProduct 
-                  key={item.id}
-                  item={item}
-               />
-            ))}
-         </div>
+         </div> 
+         <div className="flex flex-col">
+            <div className="flex flex-wrap justify-around">
+               {filterProducts().map(item => (
+                  <SingleProduct 
+                     key={item.id}
+                     item={item}
+                  />
+               ))}
+            </div>
+            <div className="flex flex-col justify-center items-center mt-4 mb-2 text-lg tracking-wider">
+               <p className=" flex flex-row">Ryan Vu 
+                  <span className="relative top-1.5 mx-1"><AiOutlineCopyrightCircle /></span> 
+                  {new Date().getFullYear()} </p>
+               <div>
+                  Pictures from <a href="https://www.uniqlo.com/ca/en/men/tops/ut-graphic-tees">UNIQLO</a>
+                  <img className="w-5 relative bottom-0.5 inline ml-1" src="https://tinyurl.com/uniqloz" />                                    
+               </div>
+            </div>  
+         </div>          
+         
+           
       </div>
    )
 }

@@ -84,7 +84,7 @@ const Filter = () => {
             />
          </span>
 
-         <Button className="transition-all duration-300 ease-linear hover:bg-red-500 hover:text-white bg-white text-darkblue tracking-wide rounded p-2 font-medium text-lg sm-text-base w-1/2 sm:w-full mx-auto mt-2" onClick={() => productDispatch({ type: "CLEAR_FILTERS"})}>Clear Filter</Button>    
+         <Button className="transition-all duration-300 ease-linear border-2 hover:border-2 hover:bg-blue-600 hover:text-white bg-white text-darkblue tracking-wide rounded p-2 font-medium text-lg sm-text-base w-1/2 sm:w-full mx-auto mt-2" onClick={() => productDispatch({ type: "CLEAR_FILTERS"})}>Clear Filter</Button>    
             
       </div>
    )
