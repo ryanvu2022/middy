@@ -3,7 +3,7 @@ import Rating from "./Rating";
 import { ADD_TO_CART, REMOVE_FROM_CART } from "../constants/actionTypes";
 
 const SingleProduct = ({ item }) => {
-  const { id, name, price, image, inStock, ratings } = item;
+  const { id, name, price, image, inStock, ratings, fastDelivery } = item;
   const { state: { cart }, dispatch } = CartState();
 
   const addToCart = () => {
@@ -27,7 +27,7 @@ const SingleProduct = ({ item }) => {
         <h1 className="font-medium sm:text-base text-lg mt-1">{name}</h1>
         <h5 className="tracking-wide font-medium text-lg">${price}</h5>
         {
-          item.fastDelivery
+          fastDelivery
             ? <div className="text-lg sm:text-base">Fast Delivery</div>
             : <div className="text-lg sm:text-base">5 Days Delivery</div>
         }
