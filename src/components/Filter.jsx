@@ -8,10 +8,10 @@ const Filter = () => {
 
    return (
       <div className="flex flex-col sm:w-96 w-full bg-darkblue mt-3 p-4 text-white h-56 sm:h-full">
-         <span className="pb-3 text-2xl sm:text-xl sm:text-left text-center">Filter Products</span>
+         <span className="pb-3 text-2xl sm:text-xl sm:text-left sm:ml-2 text-center">Filter Products</span>
          <div className="flex flex-row sm:flex-col justify-evenly">
             <div className="flex flex-col">
-               <span className="text-lg sm:text-base sm:mb-2">
+               <span className="text-lg sm:text-base sm:mb-2 sm:ml-1">
                   <Form.Check 
                      inline
                      label=" Price Low to High"
@@ -26,7 +26,7 @@ const Filter = () => {
                   />
                </span>
 
-               <span className="text-lg sm:text-base sm:mb-2">
+               <span className="text-lg sm:text-base sm:mb-2 sm:ml-1">
                   <Form.Check 
                      inline
                      label=" Price High to Low"
@@ -43,7 +43,7 @@ const Filter = () => {
             </div>
 
             <div className="flex flex-col">
-               <span className="text-lg sm:text-base sm:mb-2">
+               <span className="text-lg sm:text-base sm:mb-2 sm:ml-1">
                   <Form.Check 
                      inline
                      label=" Fast Delivery"
@@ -57,7 +57,7 @@ const Filter = () => {
                   />
                </span>
 
-               <span className="text-lg sm:text-base sm:mb-2">
+               <span className="text-lg sm:text-base sm:mb-2 sm:ml-1">
                   <Form.Check
                      inline
                      label=" In Stock Only"
@@ -73,7 +73,7 @@ const Filter = () => {
             </div>         
          </div>
          
-         <span className="flex flex-row justify-center sm:justify-start mb-1">
+         <span className="flex flex-row justify-center sm:justify-start mb-1 sm:ml-1">
             <label className="pr-2.5 text-lg sm:text-base">Rating: </label>
             <Rating 
                rating={byRating} 
@@ -84,7 +84,7 @@ const Filter = () => {
             />
          </span>
 
-         <Button className="transition-all duration-300 ease-linear border-2 hover:border-2 hover:bg-blue-600 hover:text-white bg-white text-darkblue tracking-wide rounded p-2 font-medium text-lg sm-text-base w-1/2 sm:w-full mx-auto mt-2" onClick={() => productDispatch({ type: "CLEAR_FILTERS"})}>Clear Filter</Button>    
+         <Button className="transition-all duration-300 ease-linear border-2 hover:border-2 hover:bg-blue-600 hover:text-white bg-white text-darkblue tracking-wide rounded p-1 font-medium text-lg sm-text-base w-1/2 sm:w-full mx-auto mt-2" onClick={() => productDispatch({ type: "CLEAR_FILTERS"})}>Clear Filter</Button>    
             
       </div>
    )

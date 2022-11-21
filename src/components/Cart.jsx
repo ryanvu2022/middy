@@ -48,9 +48,15 @@ const Cart = () => {
               Total <span>${total.toFixed(2)}</span>
             </h4>
           </div>
+          
+          <button className="transition-all duration-300 ease-linear text-darkred text-xl mt-4 items-center font-medium rounded bg-white border-2 border-solid border-darkred w-2/5 mx-auto py-2 tracking-widest hover:text-white hover:bg-darkred"
+          onClick={() => dispatch({ type: RESET_CART })}>
+            Clear Cart
+          </button>
+
           <button className="transition-all duration-300 ease-linear mt-4 text-white text-xl items-center font-medium rounded bg-darkblue hover:bg-blue-500 w-2/5 mx-auto py-3 tracking-widest" onClick={() => {
             alert("Thank you for your order!");
-            dispatch({ type: RESET_CART})
+            dispatch({ type: RESET_CART })
           }}>
             Checkout
           </button>
