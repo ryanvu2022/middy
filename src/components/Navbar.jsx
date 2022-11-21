@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { CartState } from "../context/Context";
 import { CartIcon } from "../icons";
@@ -9,6 +9,13 @@ const Navbar = () => {
    const { state: { cart } } = CartState();
 
    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+   const [amount, setAmount] = useState(0);
+
+   useEffect(() => {
+      const total = cart.reduce((acc, item) => acc + item.quantity, 0);
+      setAmount(total);
+   }, [cart]);
 
    const toggleDropdown = () => {
       setIsDropdownOpen(!isDropdownOpen);
@@ -26,7 +33,7 @@ const Navbar = () => {
                   <div className="block relative cursor-pointer" onClick={toggleDropdown}>
                      <CartIcon />
                      <div className="absolute -top-2.5 -right-2.5 w-6 h-6 bg-lightblue rounded-full flex items-center justify-center">
-                        <p className="mb-0 text-lg">{cart.length}</p>
+                        <p className="mb-0 text-lg">{amount}</p>
                      </div>              
                   </div>         
                </Dropdown.Toggle>
