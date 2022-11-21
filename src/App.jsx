@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <div>
+      <div className="mt-20">
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/cart" element={<Cart />} />

@@ -22,7 +22,7 @@ const Navbar = () => {
    }
 
    return (
-      <nav className="bg-darkblue w-full px-8 py-5 text-white">
+      <nav className="bg-darkblue w-full px-8 py-5 text-white fixed top-0 left-0 right-0 z-10">
          <div className="w-full flex justify-between items-center m-0">
             <h2 className="mb-0 tracking-widest text-3xl cursor-pointer">
                <Link to="/" onClick={() => setIsDropdownOpen(false)}>Middy</Link>

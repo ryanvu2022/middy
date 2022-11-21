@@ -14,9 +14,15 @@ const DropdownCart = ({ setIsDropdownOpen}) => {
     }, [cart]);
 
    return (
-      <div>
+      <div className="z-50">
          {cart.length > 0
             ?  <>
+                  <Link to="/cart" className="flex items-center justify-center">
+                     <button className="transition-all duration-300 ease-linear bg-darkblue text-white hover:bg-blue-500 text-xl tracking-wide w-full py-2 px-4 m-4 mb-1 rounded" onClick={() => setIsDropdownOpen(false)}>
+                        Go to Cart
+                     </button>
+                  </Link>
+
                   {cart.map(item => (
                      <span className="flex justify-between items-center mx-4 mt-4 p-4 shadow-2xl border border-darkblue text-black rounded" key={item.id}>
                         <img src={item.image} alt={item.name}
@@ -36,17 +42,11 @@ const DropdownCart = ({ setIsDropdownOpen}) => {
                      </span>
                   ))}
 
-                  <h4 className="flex justify-between text-lg mx-5 mt-4 text-black">
+                  <h4 className="flex justify-between text-lg mx-5 mt-2 mb-4 text-black">
                      Subtotal <span>${subtotal.toFixed(2)}</span>
-                  </h4>
-                  
-                  <Link to="/cart" className="flex items-center justify-center">
-                     <button className="transition-all duration-300 ease-linear bg-darkblue text-white hover:bg-blue-500 text-xl tracking-wide w-full py-2 px-4 m-4 rounded" onClick={() => setIsDropdownOpen(false)}>
-                        Go to Cart
-                     </button>
-                  </Link>
+                  </h4>                                 
                </>
-            :  <div className="bg-gray-300 py-2 px-4 rounded">
+            :  <div className="py-2 px-4 rounded">
                   <p className="text-darkblue font-semibold text-lg ">Cart is Empty!</p>
                </div>
          }
