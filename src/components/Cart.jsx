@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { CartState } from '../context/Context';
 import CartItem from './CartItem';
 import { RESET_CART } from '../constants/actionTypes';
@@ -37,17 +38,17 @@ const Cart = () => {
         <footer className="flex flex-col">
           <hr className="border border-transparent bg-black"/>
           <div className="text-center mt-4">
-            <h4 className="capitalize flex justify-between text-darkblue font-medium text-xl mb-2">
-              Subtotal <span>${subtotal}</span>
+            <h4 className="capitalize flex justify-between text-darkblue font-medium text-xl mb-2 tracking-wider">
+              Subtotal <span>${subtotal.toFixed(2)}</span>
             </h4>
-            <h4 className="capitalize flex justify-between text-darkblue font-medium text-xl mb-2">
+            <h4 className="capitalize flex justify-between text-darkblue font-medium text-xl mb-2 tracking-wider">
               Tax <span>${tax.toFixed(2)}</span>
             </h4>
-            <h4 className="capitalize flex justify-between text-darkblue font-medium text-xl mb-2">
+            <h4 className="capitalize flex justify-between text-darkblue font-medium text-xl mb-2 tracking-wider">
               Total <span>${total.toFixed(2)}</span>
             </h4>
           </div>
-          <button className="transition-all duration-300 ease-linear mt-4 text-white text-xl items-center font-medium rounded bg-darkblue hover:bg-blue-500 w-2/5 mx-auto py-2 tracking-widest" onClick={() => {
+          <button className="transition-all duration-300 ease-linear mt-4 text-white text-xl items-center font-medium rounded bg-darkblue hover:bg-blue-500 w-2/5 mx-auto py-3 tracking-widest" onClick={() => {
             alert("Thank you for your order!");
             dispatch({ type: RESET_CART})
           }}>
@@ -55,8 +56,11 @@ const Cart = () => {
           </button>
         </footer>
       </> : (
-        <div>
-          <div className="text-center font-medium tracking-wider text-xl text-darkblue">is currently empty</div>         
+        <div className="flex flex-col gap-10">
+          <div className="text-center font-medium tracking-wider text-xl -mt-6">is currently empty</div>
+          <Link to="/" className="transition-all duration-300 ease-linear text-center text-white text-xl items-center font-medium rounded bg-darkblue hover:bg-blue-500 w-2/5 mx-auto py-3 tracking-widest">
+            Start shopping
+          </Link>                    
         </div>
         
       )}

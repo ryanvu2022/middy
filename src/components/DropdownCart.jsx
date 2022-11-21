@@ -37,7 +37,7 @@ const DropdownCart = ({ setIsDropdownOpen}) => {
                   ))}
 
                   <h4 className="flex justify-between text-lg mx-5 mt-4 text-black">
-                     Subtotal <span>${subtotal}</span>
+                     Subtotal <span>${subtotal.toFixed(2)}</span>
                   </h4>
                   
                   <Link to="/cart" className="flex items-center justify-center">
