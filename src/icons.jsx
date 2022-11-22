@@ -2,7 +2,7 @@ export const CartIcon = () => {
    return (
      <svg
        xmlns='http://www.w3.org/2000/svg'
-       className='h-10 w-10 text-white'
+       className='h-10 w-10 text-darkblue'
        fill='none'
        viewBox='0 0 24 24'
        stroke='currentColor'

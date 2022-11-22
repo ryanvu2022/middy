@@ -4,6 +4,7 @@ import { CartState } from "../context/Context";
 import { CartIcon } from "../icons";
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownCart from "./DropdownCart";
+import middy from "../products/logo";
 
 const Navbar = () => {
    const { state: { cart } } = CartState();
@@ -22,15 +23,17 @@ const Navbar = () => {
    }
 
    return (
-      <nav className="bg-darkblue w-full px-8 py-5 text-white fixed top-0 left-0 right-0 z-10">
+      <nav className="bg-baseColor max-w-[1280px] mx-auto w-full px-4 pb-2 pt-3 text-darkblue fixed top-0 left-0 right-0 z-10 border-b-2 border-x-2 ">
          <div className="w-full flex justify-between items-center m-0">
-            <h2 className="mb-0 tracking-widest text-3xl cursor-pointer">
-               <Link to="/" onClick={() => setIsDropdownOpen(false)}>Middy</Link>
+            <h2 className="mb-0 tracking-widest text-3xl font-medium cursor-pointer">
+               <Link to="/" onClick={() => setIsDropdownOpen(false)}>
+                  <img src={middy} className="h-16"/>
+               </Link>
             </h2>
 
             <Dropdown>
                <Dropdown.Toggle>
-                  <div className="block relative cursor-pointer" onClick={toggleDropdown}>
+                  <div className="block relative cursor-pointer mr-4" onClick={toggleDropdown}>
                      <CartIcon />
                      <div className="absolute -top-2.5 -right-2.5 w-6 h-6 bg-lightblue rounded-full flex items-center justify-center">
                         <p className="mb-0 text-lg">{amount}</p>

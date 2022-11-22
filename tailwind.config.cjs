@@ -7,6 +7,7 @@ module.exports = {
         darkblue: "#083AA9",
         lightblue: "#8fc5e9",
         darkred: "#FF1E1E",
+        baseColor: "#fff8f3",
       },
       gridTemplateColumns: {
         "cartgrid": "auto 1fr auto"

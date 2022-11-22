@@ -25,7 +25,7 @@ const Home = () => {
       }
 
       if (byRating) {
-         sortedProducts = sortedProducts.filter(item => item.ratings == byRating)
+         sortedProducts = sortedProducts.filter(item => item.ratings >= byRating)
       }
 
       return sortedProducts;
@@ -37,7 +37,7 @@ const Home = () => {
             <Filter />               
          </div> 
          <div className="flex flex-col">
-            <div className="flex flex-wrap justify-around">
+            <div className="flex flex-wrap justify-evenly border-l-2 ">
                {filterProducts().map(item => (
                   <SingleProduct 
                      key={item.id}
