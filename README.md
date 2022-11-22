@@ -9,8 +9,10 @@ Key features:
 - Update quantity and total
 - Reset the cart
 
+https://user-images.githubusercontent.com/105618431/203190259-11b1a848-9116-4227-8ff8-2f062b5b1fa1.mp4
 
-https://user-images.githubusercontent.com/105618431/203163031-9702727c-ec6d-49a3-95c5-82cb3414196e.mp4
+
+
 
 
 
