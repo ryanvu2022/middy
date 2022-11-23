@@ -42,7 +42,7 @@ const Cart = () => {
               Subtotal <span>${subtotal.toFixed(2)}</span>
             </h4>
             <h4 className="capitalize flex justify-between text-darkblue font-medium text-xl mb-2 tracking-wider">
-              Tax <span>${tax.toFixed(2)}</span>
+              Tax (13%) <span>${tax.toFixed(2)}</span>
             </h4>
             <h4 className="capitalize flex justify-between text-darkblue font-medium text-xl mb-2 tracking-wider">
               Total <span>${total.toFixed(2)}</span>

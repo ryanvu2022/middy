@@ -25,7 +25,7 @@ const SingleProduct = ({ item }) => {
       <img src={image} alt={name}/>
       <div>
         <h1 className="font-medium sm:text-base text-lg mt-1">{name}</h1>
-        <h5 className="tracking-wide font-medium text-lg">CAD ${price}</h5>
+        <h5 className="tracking-wide font-medium sm:text-base text-lg">CAD ${price}</h5>
         {
           fastDelivery
             ? <div className="text-lg sm:text-base">Fast Delivery</div>
