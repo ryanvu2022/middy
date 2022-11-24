@@ -8,7 +8,7 @@ const CartItem = ({ item }) => {
    const { id, image, name, price, quantity } = item;
 
    return (
-      <div key={id} className="grid items-center grid-cols-cartgrid gap-x-6 my-6 mx-12">
+      <div key={id} className="grid items-center grid-cols-cartgrid gap-x-6 my-6 sm:mx-12">
          <Link to={`/product/${id}`}>
             <img src={image} alt={name} className="rounded w-24 h-24 object-cover" />
          </Link>   

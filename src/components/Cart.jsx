@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import CartItem from './CartItem';
 import Policy from './Policy';
+import Modal from './Modal';
 import { Link } from 'react-router-dom';
 import { CartState } from '../context/Context';
-import { RESET_CART } from '../constants/actionTypes';
+import { OPEN_MODAL, RESET_CART } from '../constants/actionTypes';
 
 const Cart = () => { 
-  const { state: { cart }, dispatch } = CartState();
+  const { state: { cart }, dispatch, modalState: { isOpen }, modalDispatch } = CartState();
 
   const [subtotal, setSubtotal] = useState(0);
   const [tax, setTax] = useState(0);
@@ -27,6 +28,7 @@ const Cart = () => {
 
   return (
     <section className="min-h-screen mx-12 my-0 px-0 py-10 max-w-7xl bg-white">
+      {isOpen && <Modal />}
       <header>
         <h2 className="text-center text-black mb-12 text-4xl font-medium capitalize">Your Cart</h2>
       </header>
@@ -37,15 +39,15 @@ const Cart = () => {
           ))}
         
         <footer className="flex flex-col">
-          <hr className="border border-transparent bg-black mx-12"/>
+          <hr className="border border-transparent bg-black sm:mx-12"/>
           <div className="text-center mt-4">
-            <h4 className="capitalize flex justify-between text-darkblue font-medium text-xl mb-2 tracking-wider mx-12">
+            <h4 className="capitalize flex justify-between text-darkblue font-medium text-xl mb-2 tracking-wider sm:mx-12">
               Subtotal <span>${subtotal.toFixed(2)}</span>
             </h4>
-            <h4 className="capitalize flex justify-between text-darkblue font-medium text-xl mb-2 tracking-wider mx-12">
+            <h4 className="capitalize flex justify-between text-darkblue font-medium text-xl mb-2 tracking-wider sm:mx-12">
               Tax (13%) <span>${tax.toFixed(2)}</span>
             </h4>
-            <h4 className="capitalize flex justify-between text-darkblue font-medium text-xl mb-2 tracking-wider mx-12">
+            <h4 className="capitalize flex justify-between text-darkblue font-medium text-xl mb-2 tracking-wider sm:mx-12">
               Total <span>${total.toFixed(2)}</span>
             </h4>
           </div>
@@ -53,7 +55,7 @@ const Cart = () => {
           <Policy />
           
           <button className="transition-all duration-300 ease-linear text-darkred text-xl mt-4 items-center font-medium rounded bg-white border-2 border-solid border-darkred ss:w-2/5 w-52 mx-auto py-2 tracking-widest hover:text-white hover:bg-darkred"
-          onClick={() => dispatch({ type: RESET_CART })}>
+          onClick={() => modalDispatch({ type: OPEN_MODAL })}>
             Clear Cart
           </button>
 
