@@ -1,9 +1,10 @@
 import { CartState } from "../context/Context";
 import Rating from "./Rating";
+import { Link } from "react-router-dom";
 import { ADD_TO_CART, REMOVE_FROM_CART } from "../constants/actionTypes";
 
 const SingleProduct = ({ item }) => {
-  const { id, name, price, image, inStock, ratings, fastDelivery } = item;
+  const { id, name, price, image, inStock, ratings, fastDelivery, numberOfRatedPeople } = item;
   const { state: { cart }, dispatch } = CartState();
 
   const addToCart = () => {
@@ -22,7 +23,9 @@ const SingleProduct = ({ item }) => {
 
   return (    
     <div className="shadow-2xl sm:w-60 ss:w-72 w-80 m-2 p-3 rounded-md bg-white">
-      <img src={image} alt={name}/>
+      <Link to={`/product/${id}`}>
+        <img src={image} alt={name}/>
+      </Link>      
       <div>
         <h1 className="font-medium sm:text-base text-lg mt-1">{name}</h1>
         <h5 className="tracking-wide font-medium sm:text-base text-lg">CAD ${price}</h5>
@@ -33,6 +36,7 @@ const SingleProduct = ({ item }) => {
         }
         <div className="flex flex-row">
           <Rating rating={ratings}/>
+          <span className="ml-1">({numberOfRatedPeople})</span>
         </div> 
       </div>
       <div className="flex justify-center mt-2">

@@ -4,7 +4,7 @@ import { CartState } from "../context/Context";
 import { CartIcon } from "../icons";
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownCart from "./DropdownCart";
-import middy from "../products/logo";
+import icons from "../products/icons";
 
 const Navbar = () => {
    const { state: { cart } } = CartState();
@@ -27,7 +27,7 @@ const Navbar = () => {
          <div className="w-full flex justify-between items-center m-0">
             <h2 className="mb-0 tracking-widest text-3xl cursor-pointer">
                <Link to="/" onClick={() => setIsDropdownOpen(false)}>
-                  <img src={middy} className="h-16"/>
+                  <img src={icons.middy} className="h-16"/>
                </Link>
             </h2>
 
