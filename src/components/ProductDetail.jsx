@@ -2,10 +2,10 @@ import React from 'react';
 import Rating from './Rating';
 import { useParams } from 'react-router-dom';
 import { products } from '../products/products';
-import icons from '../products/icons';
 import { CartState } from "../context/Context";
 import { Link } from 'react-router-dom';
 import { ADD_TO_CART, REMOVE_FROM_CART } from "../constants/actionTypes";
+import Policy from './Policy';
 
 const ProductDetail = () => {
    const { productId } = useParams();
@@ -25,8 +25,8 @@ const ProductDetail = () => {
                   <span className="ml-1">({numberOfRatedPeople})</span>
                   
                   { fastDelivery
-                     ? <span className="ml-10 tracking-wide">Fast Delivery</span>
-                     : <span className="ml-10 tracking-wide">5 Days Delivery</span>
+                     ? <span className="ml-4 tracking-wide">Fast Delivery</span>
+                     : <span className="ml-4 tracking-wide">5 Days Delivery</span>
                   }
                </div>
                <h2 className="md:text-xl sm:text-lg text-base">Details:</h2>
@@ -61,24 +61,7 @@ const ProductDetail = () => {
                </div>          
             </div>
          </div>
-         <div className="flex flex-wrap justify-evenly text-base items-stretch">
-            <div className="flex flex-col gap-4 ss:my-4 my-2 items-center border-2 md:p-8 p-4 w-36 ss:w-56 lg:w-64">
-               <img src={icons.shipping} className="sm:w-16 ss:w-10 w-12"/>
-               <p className="text-center">Worldwide <br/> Shipping</p>
-            </div>
-            <div className="flex flex-col gap-4 ss:my-4 my-2 items-center border-2 md:p-8 p-4 w-36 ss:w-56 lg:w-64">
-               <img src={icons.returns} className="sm:w-16 ss:w-10 w-12"/>
-               <p className="text-center">Free 30-day <br/> Returns</p>
-            </div>            
-            <div className="flex flex-col gap-4 ss:my-4 my-2 items-center border-2 md:p-8 p-4 w-36 ss:w-56 lg:w-64">
-               <img src={icons.warranty} className="sm:w-16 ss:w-10 w-12"/>
-               <p className="text-center">12-month <br/> Warranty</p>
-            </div>
-            <div className="flex flex-col gap-4 ss:my-4 my-2 items-center border-2 md:p-8 p-4 w-36 ss:w-56 lg:w-64">
-               <img src={icons.checkout} className="sm:w-16 ss:w-10 w-12"/>
-               <p className="text-center">Secure <br/> Checkout</p>
-            </div>                     
-         </div>
+         <Policy />
       </div>
    )
 }
