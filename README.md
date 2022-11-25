@@ -11,7 +11,11 @@ Key features:
 - Clear the cart, with pop-up modal to ask user for confirmation in case they mistakenly click the Clear cart button
 - Reset the cart
 
-https://user-images.githubusercontent.com/105618431/203190259-11b1a848-9116-4227-8ff8-2f062b5b1fa1.mp4
+
+
+
+https://user-images.githubusercontent.com/105618431/204038065-4f18872d-ca1b-46a6-9a5b-e6b653a78ba3.mp4
+
 
 
 
