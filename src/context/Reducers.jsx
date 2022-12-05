@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, RESET_CART, UPDATE_QUANTITY, SORT_BY_PRICE, FILTER_BY_STOCK, FILTER_BY_DELIVERY, FILTER_BY_RATING, CLEAR_FILTERS, OPEN_MODAL, CLOSE_MODAL } from "../constants/actionTypes.jsx";
+import { ADD_TO_CART, REMOVE_FROM_CART, RESET_CART, UPDATE_QUANTITY, INITIALIZE_CART, SORT_BY_PRICE, FILTER_BY_STOCK, FILTER_BY_DELIVERY, FILTER_BY_RATING, CLEAR_FILTERS, OPEN_MODAL, CLOSE_MODAL } from "../constants/actionTypes.jsx";
 
 export const cartReducer = (state, action) => {
    switch (action.type) {
@@ -10,7 +10,7 @@ export const cartReducer = (state, action) => {
       case REMOVE_FROM_CART:
          return {
             ...state,
-            cart: state.cart.filter(item => item.id !== action.payload.id)
+            cart: state.cart.filter(item => item._id !== action.payload._id)
          };
       case RESET_CART:
          return {
@@ -21,10 +21,12 @@ export const cartReducer = (state, action) => {
          return {
             ...state,
             cart: state.cart.filter(item => 
-               item.id === action.payload.id
+               item._id === action.payload._id
                   ? item.quantity = action.payload.quantity
                   : item.quantity )
          }
+      case INITIALIZE_CART:
+         return action.payload;
       default:
          return state;
    }

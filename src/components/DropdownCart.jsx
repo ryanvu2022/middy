@@ -24,7 +24,7 @@ const DropdownCart = ({ setIsDropdownOpen}) => {
                   </Link>
 
                   {cart.map(item => (
-                     <span className="flex justify-between items-center mx-4 ss:mt-3 mt-2 ss:p-4 p-2 border border-darkblue text-black rounded" key={item.id}>
+                     <span key={item._id} className="flex justify-between items-center mx-4 ss:mt-3 mt-2 ss:p-4 p-2 border border-darkblue text-black rounded" >
                         <img src={item.image} alt={item.name}
                            className="rounded ss:w-12 ss:h-12 w-8 h-8 object-cover"
                         />

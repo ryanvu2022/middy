@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { ADD_TO_CART, REMOVE_FROM_CART } from "../constants/actionTypes";
 
 const SingleProduct = ({ item }) => {
-  const { id, name, price, image, inStock, ratings, fastDelivery, numberOfRatedPeople } = item;
+  const { _id, name, price, image, inStock, ratings, fastDelivery, numberOfRatedPeople } = item;
   const { state: { cart }, dispatch } = CartState();
 
   const addToCart = () => {
@@ -23,7 +23,7 @@ const SingleProduct = ({ item }) => {
 
   return (    
     <div className="shadow-2xl sm:w-60 ss:w-72 w-80 m-2 p-3 rounded-md bg-white">
-      <Link to={`/product/${id}`}>
+      <Link to={`/product/${_id}`}>
         <img src={image} alt={name}/>
       </Link>      
       <div>
@@ -40,12 +40,12 @@ const SingleProduct = ({ item }) => {
         </div> 
       </div>
       <div className="flex justify-center mt-2">
-        {cart.some(p => p.id === id) && (
+        {cart.some(p => p._id === _id) && (
           <button className="transition-all duration-300 ease-linear text-lg sm:text-base bg-red-600 hover:bg-red-400 text-white py-2 px-4 mr-2 my-2 rounded-md" onClick={removeFromCart}>
             Remove from Cart
           </button>
         )}
-        {!cart.some(p => p.id === id) && inStock && (
+        {!cart.some(p => p._id === _id) && inStock && (
           <button className="transition-all duration-300 ease-linear text-lg sm:text-base bg-blue-600 hover:bg-blue-400 text-white py-2 px-4 mr-2 my-2 rounded-md" onClick={addToCart}>
             Add to Cart
           </button>

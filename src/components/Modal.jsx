@@ -11,7 +11,7 @@ const Modal = () => {
        <div className="bg-white rounded px-10 py-8 text-center">
          <h4 className="capitalize leading-normal mb-4 text-darkblue font-bold text-xl">Remove all items from your shopping cart?</h4>
          <div className="flex justify-around">
-           <button type="button" className="mt-4 font-bold uppercase transition-all duration-300 ease-linear bg-white text-darkblue border-2 border-darkblue hover:bg-darkblue hover:text-white font-medium px-6 py-2 rounded tracking-wider" 
+           <button type="button" className="mt-4 uppercase transition-all duration-300 ease-linear bg-white text-darkblue border-2 border-darkblue hover:bg-darkblue hover:text-white font-medium px-6 py-2 rounded tracking-wider" 
             onClick={() => {
               dispatch({ type: RESET_CART });
               modalDispatch({ type: CLOSE_MODAL });
@@ -19,7 +19,7 @@ const Modal = () => {
             }}>
              Confirm
            </button>
-           <button type="button" className="mt-4 font-bold uppercase transition-all duration-300 ease-linear bgwhite text-darkred border-2 border-darkred hover:bg-darkred hover:text-white font-medium px-7 py-2 rounded tracking-wider"
+           <button type="button" className="mt-4 uppercase transition-all duration-300 ease-linear bgwhite text-darkred border-2 border-darkred hover:bg-darkred hover:text-white font-medium px-7 py-2 rounded tracking-wider"
             onClick={() => modalDispatch({ type: CLOSE_MODAL })}>
              Cancel
            </button>

@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 
 const CartItem = ({ item }) => {
    const { dispatch } = CartState();
-   const { id, image, name, price, quantity } = item;
+   const { _id, image, name, price, quantity } = item;
 
    return (
-      <div key={id} className="grid items-center grid-cols-cartgrid gap-x-6 my-6 sm:mx-12">
-         <Link to={`/product/${id}`}>
+      <div key={_id} className="grid items-center grid-cols-cartgrid gap-x-6 my-6 sm:mx-12">
+         <Link to={`/product/${_id}`}>
             <img src={image} alt={name} className="rounded w-24 h-24 object-cover" />
          </Link>   
 
@@ -34,7 +34,7 @@ const CartItem = ({ item }) => {
                dispatch({
                   type: "UPDATE_QUANTITY",
                   payload: {
-                  id: id,
+                  _id: _id,
                   quantity: quantity + 1
                   }
                })
@@ -52,7 +52,7 @@ const CartItem = ({ item }) => {
                   dispatch({
                   type: "UPDATE_QUANTITY",
                   payload: {
-                     id: id,
+                     _id: _id,
                      quantity: quantity - 1
                   }
                   })}

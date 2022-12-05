@@ -10,7 +10,7 @@ const Home = () => {
       productState: { sort, byFastDelivery, byStock, byRating }
    } = CartState();
 
-   const [productsPerPage] = useState(12);
+   const [productsPerPage] = useState(8);
    const [currentPage, setCurrentPage] = useState(1);
 
    const filterProducts = () => {
@@ -51,7 +51,7 @@ const Home = () => {
             <div className="flex flex-wrap justify-evenly border-l-2 ">
                {currentProducts.map(item => (
                   <SingleProduct 
-                     key={item.id}
+                     key={item._id}
                      item={item}
                   />
                ))}               

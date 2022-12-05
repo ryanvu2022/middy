@@ -1,15 +1,35 @@
-import { createContext, useContext, useReducer } from 'react';
+import { createContext, useContext, useReducer, useEffect } from 'react';
 import { cartReducer, productReducer, modalReducer } from './Reducers';
-import { products } from '../products/products';
+import axios from 'axios';
+import { INITIALIZE_CART } from '../constants/actionTypes';
 
 const Cart = createContext();
 
 const Context = ({ children }) => {
 
-   const [state, dispatch] = useReducer(cartReducer, {
-      products: products,
-      cart: []
-   });
+   const initialState = {
+      products: [],
+      cart: [],
+      isLoading: true
+   }
+
+   const [state, dispatch] = useReducer(cartReducer, initialState);
+
+   useEffect(() => {
+      const getProducts = async () => {
+         const res = await axios.get("https://middy-backend-api-production.up.railway.app/products");
+         dispatch({
+            type: INITIALIZE_CART,
+            payload: {
+               ...initialState,
+               products: res.data,
+               isLoading: false
+            }
+         });
+      };
+
+      getProducts();
+   },[])
 
    const [productState, productDispatch] = useReducer(productReducer, {
       byRating: 0,
