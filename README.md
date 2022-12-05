@@ -10,11 +10,9 @@ Key features:
 - Update quantity, subtotal, tax, and total
 - Clear the cart, with pop-up modal to ask user for confirmation in case they mistakenly click the Clear cart button
 - Reset the cart
+- Complete pagination with maximum 12 items per page.
 
-
-
-
-https://user-images.githubusercontent.com/105618431/204038065-4f18872d-ca1b-46a6-9a5b-e6b653a78ba3.mp4
+https://user-images.githubusercontent.com/105618431/204176628-48b2aefa-d202-4f20-bf09-496bdfcad93b.mp4
 
 
 
